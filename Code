@@ -1,0 +1,161 @@
+# Program: A Multiple String Class
+# This program uses a constructor to create objects with 3 strings. The
+# program checks if the strings are in the correct format, allows individual
+# parts of the object to be changed, and can access specific parts of the
+# program.
+
+class MultipleString:
+    """ encapsulates a 3-string object """
+
+    # intended class constants ------------------------------------
+    MAX_LEN = 50
+    MIN_LEN = 1
+    DEFAULT_STRING = "(undefined)"
+
+    # constructor method ------------------------------------
+    def __init__(self, string1=DEFAULT_STRING, \
+                 string2=DEFAULT_STRING, \
+                 string3=DEFAULT_STRING) :
+        # Initializing defaults
+        self.string1 = self.DEFAULT_STRING
+        self.string2 = self.DEFAULT_STRING
+        self.string3 = self.DEFAULT_STRING
+
+        self.set_string1(string1)
+        self.set_string2(string2)
+        self.set_string3(string3)
+
+    # mutator ("set") methods -------------------------------
+    # Sets string1
+    # @param string input string1
+    def set_string1(self, string) :
+        if self.valid_string(string) :
+            self.string1 = string
+            return True
+        else:
+            return False
+
+    # Sets string2
+    # @param string input string2
+    def set_string2(self, string) :
+        if self.valid_string(string) :
+            self.string2 = string
+            return True
+        else:
+            return False
+
+    # Sets string3
+    # @param string input string3
+    def set_string3(self, string) :
+        if self.valid_string(string) :
+            self.string3 = string
+            return True
+        else:
+            return False
+
+    # accessor ("get") methods -------------------------------
+    # Returns the string1
+    # @return string string1
+    def get_string1(self) :
+        return self.string1
+
+    # Returns the string2
+    # @return string string2
+    def get_string2(self) :
+        return self.string2
+
+    # Returns the string3
+    # @return string string3
+    def get_string3(self) :
+        return self.string3
+
+    # helper methods for entire class -----------------
+    # Checks if the strings are in the correct format
+    # @param string string1, string2, or string3
+    def valid_string(self, string) :
+        if len(string) < self.MIN_LEN or len(string) > self.MAX_LEN :
+            return False
+        else :
+            return True
+
+    # Returns all the strings of an object
+    # @return string all of object information
+    def to_string(self) :
+        return("1st string: " + self.string1 + "\n" + \
+               "2nd string: " + self.string2 + "\n" + \
+               "3rd string: " + self.string3 + "\n")
+
+# ------------- CLIENT --------------------------------------------------
+def main() :
+    # Create 4 MultipleString objects
+    Multiple_string_num_1 = MultipleString("I love cake and icecream!", \
+                              "Eating mangoes in the summer!", \
+                              "Love to code!")
+    Multiple_string_num_2 = MultipleString("Ninja go!", \
+                              "Programming for fun!")
+    Multiple_string_num_3 = MultipleString("12345", \
+                              "Cloudy with a chance of meatballs!")
+    Multiple_string_num_4 = MultipleString("Hello", \
+                              "May the 4th be with you")
+    # Display all objects
+    print("All objects: ")
+    print("Object 1: " + "\n" + Multiple_string_num_1.to_string())
+    print("Object 2: " + "\n" + Multiple_string_num_2.to_string())
+    print("Object 3: " + "\n" + Multiple_string_num_3.to_string())
+    print("Object 4: " + "\n" + Multiple_string_num_4.to_string())
+    print("--------------")
+
+    # Mutate strings
+    Multiple_string_num_1.set_string1("I am Moana!")
+    Multiple_string_num_2.set_string3("It is raining!")
+    Multiple_string_num_3.set_string2("Happy Birthday!")
+    Multiple_string_num_4.set_string1("Today is a gift, " \
+                                      "that is why it is the present!")
+
+    # Display all objects
+    print("Changed objects: ")
+    print("Object 1: " + "\n" + Multiple_string_num_1.to_string())
+    print("Object 2: " + "\n" + Multiple_string_num_2.to_string())
+    print("Object 3: " + "\n" + Multiple_string_num_3.to_string())
+    print("Object 4: " + "\n" + Multiple_string_num_4.to_string())
+    print("--------------")
+
+    # 1st explicit mutator test, check if strings in correct format
+    print("Explicit mutator test 1:")
+    if Multiple_string_num_1.set_string1("wow") :
+        print("The change to object 1's string 1 was successful.")
+    else :
+        print("The change to object 1's string 1 was unsuccessful.")
+    print("--------------")
+
+    # 2nd explicit mutator test, check if strings in correct format
+    print("Explicit mutator test 2:")
+    if Multiple_string_num_3.set_string2("hripqrpqjrpeque-[buotuhtroqhp4uip3" \
+                            "whertyuoewurhoqutheouhuuoreqrnquoteqhrioeqhto " \
+                            "54582047810347-1 hiorqhihripeqr395u-913 hello " \
+                            "jreur-93 hi ") :
+        print("The change to object 3's string 2 was successful.")
+    else :
+        print("The change to object 3's string 2 was unsuccessful.")
+    print("--------------")
+
+    # Display all objects
+    print("All objects: ")
+    print("Object 1: " + "\n" + Multiple_string_num_1.to_string())
+    print("Object 2: " + "\n" + Multiple_string_num_2.to_string())
+    print("Object 3: " + "\n" + Multiple_string_num_3.to_string())
+    print("Object 4: " + "\n" + Multiple_string_num_4.to_string())
+    print("--------------")
+
+    # 1st Accessor call
+    print("The first string in object 1 is " + \
+        Multiple_string_num_1.get_string1() + ".")
+    print("--------------")
+
+    # 2nd Accessor call
+    print("The third string in object 4 is " + \
+        Multiple_string_num_4.get_string3() + ".")
+    print("--------------" )
+
+# Running main function
+main()
