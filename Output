@@ -1,0 +1,77 @@
+
+All objects: 
+Object 1: 
+1st string: I love cake and icecream!
+2nd string: Eating mangoes in the summer!
+3rd string: Love to code!
+
+Object 2: 
+1st string: Ninja go!
+2nd string: Programming for fun!
+3rd string: (undefined)
+
+Object 3: 
+1st string: 12345
+2nd string: Cloudy with a chance of meatballs!
+3rd string: (undefined)
+
+Object 4: 
+1st string: Hello
+2nd string: May the 4th be with you
+3rd string: (undefined)
+
+--------------
+Changed objects: 
+Object 1: 
+1st string: I am Moana!
+2nd string: Eating mangoes in the summer!
+3rd string: Love to code!
+
+Object 2: 
+1st string: Ninja go!
+2nd string: Programming for fun!
+3rd string: It is raining!
+
+Object 3: 
+1st string: 12345
+2nd string: Happy Birthday!
+3rd string: (undefined)
+
+Object 4: 
+1st string: Today is a gift, that is why it is the present!
+2nd string: May the 4th be with you
+3rd string: (undefined)
+
+--------------
+Explicit mutator test 1:
+The change to object 1's string 1 was successful.
+--------------
+Explicit mutator test 2:
+The change to object 3's string 2 was unsuccessful.
+--------------
+All objects: 
+Object 1: 
+1st string: wow
+2nd string: Eating mangoes in the summer!
+3rd string: Love to code!
+
+Object 2: 
+1st string: Ninja go!
+2nd string: Programming for fun!
+3rd string: It is raining!
+
+Object 3: 
+1st string: 12345
+2nd string: Happy Birthday!
+3rd string: (undefined)
+
+Object 4: 
+1st string: Today is a gift, that is why it is the present!
+2nd string: May the 4th be with you
+3rd string: (undefined)
+
+--------------
+The first string in object 1 is wow.
+--------------
+The third string in object 4 is (undefined).
+--------------
